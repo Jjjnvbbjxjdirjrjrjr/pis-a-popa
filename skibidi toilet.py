@@ -31,10 +31,6 @@ import random
 #     print('WRITE BIG LETTERS YOU IDIOT')
 
 
-
-
-
-
 # i = 0
 # while i < 10 :
 #     print(i)
@@ -62,8 +58,6 @@ import random
 # if 22 > players_s
 
 
-
-
 import random
 from unittest.mock import right
 
@@ -79,32 +73,35 @@ from unittest.mock import right
 # for i in range(len(wards)):
 #     ghost_string += wards[i] +  " "  * random.randint(1,5 )
 # print(ghost_string)
-cordinats = [5,3]
-instrictions = ['left', 'right', 'left', 'up']
+# cordinats = [5,3]
+# instrictions = ['left', 'right', 'left', 'up']
+#
+# for i in instrictions:
+#     if i == "left" :
+#         cordinats[0] -= 1
+#     if i == 'dawn':
+#         cordinats[1] -= 1
+#     if i == 'right' :
+#         cordinats[0] += 1
+#     if i == 'up' :
+#         cordinats[1] += 1
+#
+# print(cordinats)
 
-for i in instrictions:
-    if i == "left" :
-        cordinats[0] -= 1
-    if i == 'dawn':
-        cordinats[1] -= 1
-    if i == 'right' :
-        cordinats[0] += 1
-    if i == 'up' :
-        cordinats[1] += 1
+import pygame
+from Character import Character
 
-print(cordinats)
+screen = pygame.display.set_mode((800, 600))
+character = Character()
+clock = pygame.time.Clock()
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    character.display(screen)
+    pygame.display.flip()
+    clock.tick(10)
