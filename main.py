@@ -89,10 +89,14 @@ from unittest.mock import right
 # print(cordinats)
 
 import pygame
+
 from Character import Character
+from Tube import Tube
+
 
 screen = pygame.display.set_mode((800, 600))
 character = Character()
+tube = Tube()
 clock = pygame.time.Clock()
 running = True
 while running:
@@ -101,7 +105,10 @@ while running:
             running = False
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
-
+                character.speed = -10
+    screen.fill((0,0,0))
     character.display(screen)
+    character.move()
+    tube.display(screen)
     pygame.display.flip()
-    clock.tick(10)
+    clock.tick(40)
