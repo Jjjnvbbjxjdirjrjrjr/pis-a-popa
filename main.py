@@ -58,8 +58,8 @@ import random
 # if 22 > players_s
 
 
-import random
-from unittest.mock import right
+# import random
+# from unittest.mock import right
 
 #
 # wards = input()
@@ -97,6 +97,7 @@ from Tube import Tube
 screen = pygame.display.set_mode((800, 600))
 character = Character()
 tube = Tube()
+tube2 = []
 clock = pygame.time.Clock()
 running = True
 while running:
@@ -110,5 +111,6 @@ while running:
     character.display(screen)
     character.move()
     tube.display(screen)
+    tube.move()
     pygame.display.flip()
-    clock.tick(40)
+    clock.tick(70     )

@@ -1,3 +1,5 @@
+import random
+
 import pygame
 
 
@@ -6,10 +8,11 @@ import pygame
 
 class Tube:
     def __init__(self):
-        self.x = 700
+        self.x = 800
         self.y = 0
+        self.y2 = 600
         self.width = 50
-        self.length = 300
+        self.length = random.randint(0,450)
 
 
     def display(self, screen):
@@ -17,7 +20,11 @@ class Tube:
 
 
     def move(self):
-        self.x += 1
+        self.x -= 2
+        if self.x <= -50:
+            self.x += 800
+            self.length = random.randint(100,450)
+
 
 
 
