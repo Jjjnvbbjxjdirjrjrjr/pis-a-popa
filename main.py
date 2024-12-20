@@ -113,4 +113,4 @@ while running:
     tube.display(screen)
     tube.move()
     pygame.display.flip()
-    clock.tick(70     )
+    clock.tick(70)
